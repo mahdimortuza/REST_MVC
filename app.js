@@ -1,12 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const userRouter = require("./routs/user.route");
+require("./config/db");
 const app = express();
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use("/api/users",userRouter)
+app.use("/api/users", userRouter);
 
 // api/users : GET
 // api/users:id : GET
